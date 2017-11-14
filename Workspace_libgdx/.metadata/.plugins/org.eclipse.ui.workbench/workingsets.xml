@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1426251866387_1" label="MainMenu" name="MainMenu">
+<item elementID="=MainMenu-android" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=MainMenu-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=MainMenu-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=MainMenu" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1426777672696_2" label="Main_Menu_testy" name="Main_Menu_testy">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Main_Menu_Testy-desktop" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Main_Menu_Testy-core" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Main_Menu_testy" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Main_Menu_Testy-android" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1426778502380_3" label="MainMenu2" name="MainMenu2">
+<item elementID="=MainMenu2-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/MainMenu2" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/MainMenu2-android" type="4"/>
+<item elementID="=MainMenu2-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1431253072390_4" label="busy" name="busy">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/my-gdx-game-core" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/my-gdx-game-android" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/my-gdx-game-desktop" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1431266629903_5" label="autobusy" name="autobusy">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/autobusy" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/autobusy-android" type="4"/>
+<item elementID="=autobusy-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=autobusy-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1431272685779_6" label="blachy" name="blachy">
+<item elementID="=blachy-android" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=blachy" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=blachy-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=blachy-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1426251776135_0" label="Window Working Set" name="Aggregate for window 1426251776134"/>
+</workingSetManager>

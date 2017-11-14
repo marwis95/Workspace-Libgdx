@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1424952243256_15" label="test_libxdx" name="test_libxdx">
+<item elementID="=test_libgdx-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/test_libgdx-html" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/test_libxdx" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/test_libgdx-android" type="4"/>
+<item elementID="=test_libgdx-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/test_libgdx-ios" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1425063421629_16" label="libgdx_gra" name="libgdx_gra">
+<item elementID="=libgdx_gra-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=libgdx_gra" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=libgdx_gra-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/libgdx_gra-ios" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/libgdx_gra-html" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/libgdx_gra-android" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1425648793326_17" label="snake" name="snake">
+<item elementID="=snake-ios" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake-android" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake-html" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1425657884923_18" label="Snak2_2" name="Snak2_2">
+<item elementID="=Snake_2-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snake_2-ios" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snak2_2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snake_2-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snake_2-android" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snake_2-html" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1425658009872_19" label="Snake3" name="Snake3">
+<item elementID="=Snake3" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snake3-html" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snake3-android" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snake3-ios" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snake3-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Snake3-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1425812648336_20" label="snake_fifo" name="snake_fifo">
+<item elementID="=snake_fifo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake_fifo-core" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake_fifo-desktop" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake_fifo-ios" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake_fifo-html" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=snake_fifo-android" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411195394296_0" label="Window Working Set" name="Aggregate for window 1411195394295"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411195975308_1" label="Window Working Set" name="Aggregate for window 1411195975308"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411199319607_2" label="Window Working Set" name="Aggregate for window 1411199319607"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411205740685_3" label="Window Working Set" name="Aggregate for window 1411205740685"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411211757302_4" label="Window Working Set" name="Aggregate for window 1411211757302"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411220698860_5" label="Window Working Set" name="Aggregate for window 1411220698860"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411241037168_6" label="Window Working Set" name="Aggregate for window 1411241037168"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411396884411_7" label="Window Working Set" name="Aggregate for window 1411396884411"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411408408376_8" label="Window Working Set" name="Aggregate for window 1411408408376"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411480660678_9" label="Window Working Set" name="Aggregate for window 1411480660678"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411494928514_10" label="Window Working Set" name="Aggregate for window 1411494928513"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411658864521_11" label="Window Working Set" name="Aggregate for window 1411658864521"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1411755577750_12" label="Window Working Set" name="Aggregate for window 1411755577750"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1413388790922_13" label="Window Working Set" name="Aggregate for window 1413388790922"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1418244755441_14" label="Window Working Set" name="Aggregate for window 1418244755441"/>
+</workingSetManager>

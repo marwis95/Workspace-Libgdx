@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;SnakeArray&apos; in &apos;com.mygdx.game.MyGdxGame&apos; to &apos;snakeArray&apos;&#x0D;&#x0A;- Original project: &apos;snake_fifo-core&apos;&#x0D;&#x0A;- Original element: &apos;com.mygdx.game.MyGdxGame.SnakeArray&apos;&#x0D;&#x0A;- Renamed element: &apos;com.mygdx.game.MyGdxGame.snakeArray&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;SnakeArray&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;com.mygdx.game{MyGdxGame.java[MyGdxGame^SnakeArray" name="snakeArray" references="true" setter="false" stamp="1425887563408" textual="false" version="1.0"/>
+</session>

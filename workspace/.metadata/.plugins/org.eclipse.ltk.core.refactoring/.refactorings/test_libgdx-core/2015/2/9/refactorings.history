@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;com.mygdx.game.GameObject.texture&apos; in &apos;com.mygdx.game.GameObject&apos;&#x0D;&#x0A;- Original project: &apos;test_libgdx-core&apos;&#x0D;&#x0A;- Original element: &apos;com.mygdx.game.GameObject.texture&apos;&#x0D;&#x0A;- Getter method name: &apos;getTexture&apos;&#x0D;&#x0A;- Setter method name: &apos;setTexture&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;texture&apos;" flags="589830" getter="getTexture" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;com.mygdx.game{GameObject.java[GameObject^texture" insertion="-1" setter="setTexture" stamp="1425031281325" version="1.0" visibility="1"/>
+</session>

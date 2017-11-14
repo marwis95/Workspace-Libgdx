@@ -1,0 +1,482 @@
+package com.mygdx.game;
+
+import java.util.LinkedList;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.Preferences;
+import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeType.Bitmap;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.input.GestureDetector.GestureListener;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.scenes.scene2d.ui.List;
+import com.badlogic.gdx.utils.Array;
+
+public class GameScreen extends AbstractScreen implements InputProcessor {
+	
+	public Preferences pref;
+	
+	public GameScreen(MyGdxGame game) {
+		super(game);
+
+		LoadData();
+		Init();
+	}
+
+
+
+	Texture img;
+	private Texture SnakeTexture;
+	private LinkedList<kwadrat> snakeArray;
+	private int size = 5;
+	private int dlugosc = 5;
+	private float timeHelper;
+	public char lastKey = 'w';
+	public char preLastKey;
+	public boolean canMove=true;
+	
+	private Texture belkaTexture;
+	private belka belka1;
+	private BitmapFont font;
+	
+	private Texture robakTexture;
+	private Robak robakSmall;
+	int size_kw = Math.round(Gdx.graphics.getWidth()/15);
+	int ile_wezy = Gdx.graphics.getHeight()/size_kw;
+	int reszta = Gdx.graphics.getHeight() - (ile_wezy * size_kw);
+	
+	private int robakSmallXCoor = new MathUtils().random(15) * size_kw ;
+	private int robakSmallYCoor = new MathUtils().random(24) * size_kw ;
+	private int time;
+
+	int reszta_zero = reszta;
+	
+	private Robak_big robakBig;
+	private Texture robakBigTexture;
+
+	int los;
+	int lifeTime = 0;
+	boolean bigExist = false;
+	
+	int pkt = 0;
+	
+	private static float speed = 30;
+
+	private void LoadData() {
+		SnakeTexture = new Texture("snake.png");
+		robakTexture = new Texture("robak.png");
+		belkaTexture = new Texture("belka.png");
+		robakBigTexture = new Texture("robak_big.png");
+	}
+
+	
+	
+	private void Init() {
+		
+        Gdx.input.setInputProcessor(this);
+        Gdx.input.setCatchBackKey(true);
+		
+		Gdx.input.setInputProcessor(this);
+		snakeArray = new LinkedList<kwadrat>();
+		robakSmall = new Robak(robakTexture);
+		robakBig = new Robak_big(robakBigTexture);
+		belka1 = new belka(belkaTexture);
+
+		robakSmall.height = size_kw;
+		robakSmall.width = size_kw;
+		
+		robakBig.height = robakBig.getTexture().getHeight();
+		robakBig.width = robakBig.getTexture().getWidth();
+		
+		robakBig.x = -3000;
+		robakBig.y = -3000;
+		
+		
+		if (reszta == 0) reszta_zero = size_kw;
+		System.out.println(reszta_zero);
+		
+		font = new BitmapFont();
+		font.setColor(Color.BLACK);	
+		
+		for (int i = 0; i<size; i++){
+			kwadrat kw = new kwadrat(SnakeTexture);
+			kw.height = size_kw;
+			kw.width = size_kw;
+			kw.x = 0;
+			kw.y = i*size_kw;
+			snakeArray.add(kw);
+		}
+		
+
+
+		
+		
+		Gdx.input.setInputProcessor(new SimpleDirectionGestureDetector(new SimpleDirectionGestureDetector.DirectionListener() {
+			
+			@Override
+			public void onUp() {
+				keyDown(Keys.W);
+			}
+
+			@Override
+			public void onRight() {
+				keyDown(Keys.D);
+
+			}
+
+			@Override
+			public void onLeft() {
+				keyDown(Keys.A);
+
+			}
+
+			@Override
+			public void onDown() {
+				keyDown(Keys.S);
+
+			}
+		}));
+		
+
+	}
+
+
+	
+	private void move() {
+		
+		int size = snakeArray.size();
+		
+		kwadrat nowy = new kwadrat(SnakeTexture);
+		
+		switch(lastKey){
+
+		case 'w':
+			nowy.x = snakeArray.get(size - 1).x;
+			nowy.y = snakeArray.get(size - 1).y + size_kw;
+			break;
+		
+		case 's':
+			nowy.x = snakeArray.get(size - 1).x;
+			nowy.y = snakeArray.get(size - 1).y - size_kw;
+			break;
+		
+		case 'a':
+			nowy.y = snakeArray.get(size - 1).y;
+			nowy.x = snakeArray.get(size - 1).x - size_kw;
+			break;
+		
+		case 'd':
+				nowy.y = snakeArray.get(size - 1).y;
+				nowy.x = snakeArray.get(size - 1).x + size_kw;
+			break;
+		}
+		
+		if(nowy.x > size_kw * 14) {
+			nowy.x = 0;
+		}
+		
+		if(nowy.x < 0){
+			nowy.x = 14 * size_kw;
+		}
+		
+
+		
+		if(nowy.y > size_kw * (ile_wezy - 1) - reszta_zero) {
+			nowy.y = 0;
+		}
+		
+		if(nowy.y < 0 ){
+			nowy.y = size_kw * (ile_wezy - 2 )  ;
+		}
+		
+		
+		if((snakeArray.get(size - 1).x == robakSmallXCoor) && (snakeArray.get(size - 1).y == robakSmallYCoor)){
+			robakSmallXCoor = new MathUtils().random(14) * size_kw ;
+			robakSmallYCoor = new MathUtils().random(ile_wezy - 2) * size_kw ;
+			System.out.println("X: " + robakSmallXCoor + "   Y: " + robakSmallYCoor);
+			dlugosc +=1;
+			pkt = pkt + 3;
+			kwadrat dodaj = new kwadrat(SnakeTexture);
+			dodaj.x = -300;
+			dodaj.y = -300;
+			dodaj.height = size_kw;
+			dodaj.width = size_kw;
+			snakeArray.add(dlugosc-1, dodaj);
+			
+			los =  new MathUtils().random(5);
+			
+			System.out.println(los);
+			
+			
+			if(los == 4){
+				robakBig.x = new MathUtils().random(13) * size_kw ;
+				robakBig.y = new MathUtils().random(ile_wezy - 3) * size_kw;
+				bigExist = true;
+				lifeTime = 200;
+				
+			}
+			
+		}
+		
+
+		snakeArray.add(nowy);
+		
+		for(int i = size - 2; i >= 1; i--) {
+			snakeArray.get(i).copyFrom(snakeArray.get(i));
+		}
+
+		snakeArray.remove(0);
+		
+		
+		snakeArray.get(size - 1).height = size_kw;
+		snakeArray.get(size - 1).width = size_kw;
+		
+		if ((snakeArray.get(size - 1).overlaps(robakBig))){
+			System.out.println("W¹¿ zjadl du¿ego robala");
+			robakBig.x = -3000;
+			robakBig.y = -3000;
+			pkt += lifeTime;
+		}
+		
+		for (int i = 0; i<size - 1; i++){
+			if ((snakeArray.get(i).x == snakeArray.get(size-1).x) && (snakeArray.get(i).y == snakeArray.get(size-1).y) && (snakeArray.get(i).x >=0) && snakeArray.get(i).y>=0){
+				game.setScreen(new MenuScreen(game));
+				System.out.println("W¹¿ siê ugryz³ !!!");
+				System.out.println("x: " + snakeArray.get(i).x + " y: " + snakeArray.get(i).y);
+				
+				
+				int pkt_int;
+				String pkt_string;
+				pref = Gdx.app.getPreferences("Snake");
+				pkt_string = pref.getString("maxPkt", "0");
+				pkt_int = Integer.parseInt(pkt_string);
+
+				
+				
+				int size_int;
+				String size_string;
+				pref = Gdx.app.getPreferences("Snake");
+				size_string = pref.getString("maxSize", "0");
+				size_int = Integer.parseInt(size_string);
+				
+				int time_int;
+				String time_string;
+				pref = Gdx.app.getPreferences("Snake");
+				time_string = pref.getString("maxTime", "0");
+				time_int = Integer.parseInt(time_string);
+				
+				if(pkt_int<(size * 3) - 15){
+				pref = Gdx.app.getPreferences("Snake");
+				String temp = Integer.toString(pkt);
+				pref.putString("maxPkt", temp);
+				pref.flush();
+				}
+				
+				if(size_int<size){
+				pref = Gdx.app.getPreferences("Snake");
+				String temp_size = Integer.toString(size);
+				pref.putString("maxSize", temp_size);
+				pref.flush();
+				}
+				
+				if(time_int<(time/5)){
+				pref = Gdx.app.getPreferences("Snake");
+				String temp_time = Integer.toString(time/5);
+				pref.putString("maxTime", temp_time);
+				pref.flush();
+				}
+				
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	private void Update(float delta) {
+		timeHelper += delta;
+		
+		if(timeHelper > 0.2f){
+				move();
+				time +=1;
+			timeHelper = 0;
+		}
+		
+		
+		if ((bigExist = true) && (lifeTime>0)){
+			
+			if (timeHelper > 0.1f){
+				lifeTime -= 1;
+			}
+			
+			if (lifeTime == 0){
+				robakBig.x = -3000;
+				robakBig.y = -3000;
+			}
+			
+		}
+		
+	}
+		
+
+	@Override
+	public boolean keyDown(int keycode) {		
+		if((keycode == Keys.BACK) || (keycode == Keys.ESCAPE)){
+			game.setScreen(new MenuScreen(game));
+			System.out.println("back");
+		}
+		
+		switch(keycode) {
+		case Keys.A:
+			if(lastKey != 'd')
+				lastKey = 'a';
+			break;
+		case Keys.D:
+			if(lastKey != 'a')
+				lastKey = 'd';
+			break;
+		case Keys.W:
+			if(lastKey != 's')
+				lastKey = 'w';
+			break;
+		case Keys.S:
+			if(lastKey != 'w')
+				lastKey = 's';
+			break;
+		}
+		return false;
+	}
+
+
+
+	//Rectangle down =  new Rectangle((480 - (480/2)) /2 , 0 , 480/2, 800/5);
+	//Rectangle up =  new Rectangle((480 - (480/2)) /2 , 800 - (800/5) , 480/2, 800/5);
+	//Rectangle left = new Rectangle(0, (800 - (800/2)) /2, 480/4, 800/2);
+	//Rectangle right = new Rectangle(480 - (480/4), (800 - (800/2)) /2, 480/4, 800/2);
+	
+//	Rectangle down =  new Rectangle(480 - (2 * 75), 0 , 75, 75);
+//	Rectangle up =  new Rectangle(480 - (2*75), (2*75)  , 75, 75);
+//	Rectangle left = new Rectangle(480 - (3*75), 75 , 75, 75);
+//	Rectangle right = new Rectangle(480 - 75, 75 , 75, 75);
+
+
+	
+	@Override
+	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+ 		
+		Vector3 pos = new Vector3(screenX, screenY, 0);
+		cam.unproject(pos);
+		
+		float areaWidth = Gdx.graphics.getWidth() * 0.5f;
+		float areaHeight = Gdx.graphics.getHeight() * 0.5f;
+		float height = Gdx.graphics.getHeight();
+		float width = Gdx.graphics.getWidth();
+			
+		
+//		if(left.contains(pos.x, pos.y))
+//			keyDown(Keys.A);
+//		
+//		if(right.contains(pos.x, pos.y))
+//			keyDown(Keys.D);
+//			
+//		if(down.contains(pos.x, pos.y))
+//			keyDown(Keys.S);
+//		
+//		if(up.contains(pos.x, pos.y))
+//			keyDown(Keys.W);
+			
+		
+		return true;
+	}
+
+	
+	@Override
+	public boolean keyUp(int keycode) {
+		return false;
+	}
+
+	@Override
+	public boolean keyTyped(char character) {
+		return false;
+	}
+	
+	@Override
+	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+		return false;
+	}
+
+	@Override
+	public boolean touchDragged(int screenX, int screenY, int pointer) {
+		return false;
+	}
+
+	@Override
+	public boolean mouseMoved(int screenX, int screenY) {
+		return false;
+	}
+
+	@Override
+	public boolean scrolled(int amount) {
+		return false;
+	}
+
+	@Override
+	public void show() {	
+	}
+
+	@Override
+	public void render(float delta) {
+		super.render(delta);
+		
+		Update(delta);
+
+		
+		batch.begin();
+		
+		belka1.x = 0;
+		belka1.y = Gdx.graphics.getHeight() - (reszta + size_kw);
+		belka1.draw(batch);
+
+
+		
+		robakSmall.x = robakSmallXCoor;
+		robakSmall.y = robakSmallYCoor;
+		robakSmall.draw(batch);
+		
+		//robakBig.x = 0;
+		//robakBig.y = 0;
+		robakBig.draw(batch);
+		
+		for (kwadrat kw : snakeArray){
+			kw.draw(batch);
+		}
+		
+		
+		
+		Fonts.midFont.draw(batch, "Dlugosc: " + snakeArray.size() + "  " + "Pkt: " + pkt  + "  " + "Czas: " + (time/5) + " LifeTime: " + lifeTime, 0, Gdx.graphics.getHeight() - 20);
+		
+		batch.end();
+		
+		
+		shape.begin();
+//			shape.rect(down.x, down.y, down.width, down.height);
+//			shape.rect(up.x, up.y, up.width, up.height);
+//			shape.rect(left.x, left.y, left.width, left.height);
+//			shape.rect(right.x, right.y, right.width, right.height);
+		shape.end();
+	}
+
+}

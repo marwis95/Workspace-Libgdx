@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;SnakeAdamFifo-desktop&apos;&#x0D;&#x0A;- Original project: &apos;SnakeAdamFifo-desktop&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Ustawienia_eng.png&#x0D;&#x0A;     Ustawienia_pl.png&#x0D;&#x0A;     Ustawienia_rus.png" description="Delete elements" element1="assets/Ustawienia/Ustawienia_eng.png" element2="assets/Ustawienia/Ustawienia_pl.png" element3="assets/Ustawienia/Ustawienia_rus.png" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="3" stamp="1440689350063" subPackages="false" version="1.0"/>
+</session>

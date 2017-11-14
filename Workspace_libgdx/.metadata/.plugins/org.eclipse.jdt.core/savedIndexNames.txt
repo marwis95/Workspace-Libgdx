@@ -1,0 +1,19 @@
+INDEX VERSION 1.127+C:\Users\Marwis95\Workspace_libgdx\.metadata\.plugins\org.eclipse.jdt.core
+2340014499.index
+970960354.index
+1935132471.index
+1813485968.index
+4157221401.index
+836271022.index
+2993369945.index
+2820092822.index
+3929838796.index
+4246013276.index
+898383384.index
+3385768267.index
+279214634.index
+415034286.index
+756131208.index
+4048680689.index
+2454635535.index
+283606309.index
